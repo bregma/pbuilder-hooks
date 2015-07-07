@@ -1,0 +1,7 @@
+#!/bin/sh
+#
+# Adds the local archive to a pbuilder...  local archives are always the -smw
+# pocket to prevent inadvertent uploads to elsewhere when using dput.
+#
+echo "deb file:///home/stephenw/debian/archive $DISTRIBUTION-smw main" >>/etc/apt/sources.list
+apt-key add /home/stephenw/debian/archive/key.asc

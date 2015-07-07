@@ -1,0 +1,5 @@
+#!/bin/sh
+#
+# Runs apt-get update after all other repos have been added.
+#
+apt-get update || true

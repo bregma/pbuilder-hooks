@@ -1,0 +1,5 @@
+#!/bin/sh
+#
+# Runs apt-get upgrade after all other repos have been added.
+#
+apt-get dist-upgrade --yes || true

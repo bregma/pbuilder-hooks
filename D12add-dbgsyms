@@ -1,0 +1,12 @@
+#!/bin/sh 
+#
+# Adds a magic package to create dbgsyms, just like Ubuntu does.
+#
+apt-get install -y distro-info
+if [ $(which distro-info) ]; then
+  for distro in $(distro-info --all); do
+    if [ x$distro = x$DISTRIBUTION ]; then
+      apt-get install -y pkg-create-dbgsym
+    fi
+  done
+fi

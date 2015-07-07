@@ -1,0 +1,9 @@
+#!/bin/sh
+set -e
+install_packages() {
+    apt-get -y --force-yes install "$@"
+}
+install_packages lintian 
+echo "+++ lintian output +++"
+su -c "lintian -EviL +pedantic -I --show-overrides /tmp/buildd/*.changes; :" - pbuilder
+echo "+++ end of lintian output +++"
