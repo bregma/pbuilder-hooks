@@ -1,0 +1,4 @@
+if [ -n "${DISTRIBUTION}" ]; then
+  echo "deb http://ppa.launchpad.net/ci-train-ppa-service/stable-phone-overlay/ubuntu $DISTRIBUTION main" >> /etc/apt/sources.list
+  apt-key adv --keyserver keyserver.ubuntu.com --recv-keys ECF1204C
+fi
